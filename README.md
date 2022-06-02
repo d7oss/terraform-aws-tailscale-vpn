@@ -3,7 +3,7 @@
 A Terraform module to manage a Tailscale VPN server - why not a bastion too -
 in your VPC.
 
-You'll need a Tailscale account, and an API key, to make use of the VPN.
+You'll need a Tailscale account, and an auth key, to make use of the VPN.
 
 The managed server also works as a bastion, fits nicely in use cases like
 allowing external access into a database from data extracting tools via SSH.

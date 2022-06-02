@@ -56,7 +56,7 @@ variable "vpc_id" {
 
 variable "tailscale_auth_key" {
   description = <<-EOT
-    The Tailscale API key to authenticate the server.
+    The Tailscale authentication key to log the server into the tailnet.
     Make sure it's REUSABLE and EPHEMERAL, and pay attention to its expiry.
     Get one in https://login.tailscale.com/admin/settings/keys
   EOT
