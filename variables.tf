@@ -80,6 +80,15 @@ variable "hostname" {
   type = string
 }
 
+variable "dns_zone_id" {
+  description = <<-EOT
+    The Route53 zone ID to add a record to.
+    Setting this will enable managing a subdomain for the VPN server.
+  EOT
+  type = string
+  default = null
+}
+
 variable "extra_ssh_users" {
   description = "A collection of extra SSH users to add in the server."
   type = list(object({

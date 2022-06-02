@@ -81,3 +81,16 @@ module "security_group" {
   ingress_cidr_blocks = var.ingress_cidr_blocks
   ingress_security_groups = var.ingress_security_groups
 }
+
+resource "aws_route53_record" "main" {
+  /*
+  DNS record pointing to the VPN server
+  */
+  count = var.dns_zone_id == null ? 0 : 1
+
+  zone_id = var.dns_zone_id
+  name = var.hostname
+  type = "A"
+  ttl = 300
+  records = [aws_eip.main.public_ip]
+}

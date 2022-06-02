@@ -22,6 +22,9 @@ module "vpn" {
   env_name = "staging"
   hostname = "vpn.${local.DOMAIN_NAME}"
 
+  # DNS (optional, manages "hostname" as a subdomain)
+  dns_zone_id = module.dns.zone_id
+
   # Where to put the VPN server in the network
   vpc_id = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnets
